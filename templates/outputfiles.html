@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<!--生成一个查看/output文件夹内容的html，配合python fastapi， 使用jinja2模版-->
+<html>
+<head>
+    <title>Output Files</title>
+    <!-- 导入css -->
+    <link href="{{ url_for('static', path='/upload_files_style.css') }}" rel="stylesheet">
+</head>
+<body>
+    <h1>Output Files</h1>
+    <select id="pagination">
+    </select>
+    <ul>
+        {% for file in files %}
+            <li>{{ file }}</li>
+        {% endfor %}
+    </ul>
+</body>
+</html>

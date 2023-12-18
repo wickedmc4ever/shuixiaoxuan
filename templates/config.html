@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>用户配置</title>
+</head>
+<body>
+    <form id="configForm" method="post" action="api/save/userconfig" onloadstart="">
+        <label for="openai">OpenAI:</label>
+        <input type="text" id="openai" class="key" value="请输入你的openai key">
+        <!--<input type="button" id="save_openai" value="保存配置">-->
+        <br><br>
+        
+        <label for="zhipu">zhipu:</label>
+        <input type="text" id="zhipu" class="key" value="请输入你的智谱大模型key"><br><br>
+<!--<input type="button" id="save_openai" value="保存配置">-->        
+<br><br>
+        <input type="submit" value="保存配置">
+    </form>
+
+    <script>
+
+        var keys = {
+            "openai":document.getElementById("openai").textContent,
+            "zhipu":document.getElementById("zhipu").value
+        }
+
+        document.getElementById("configForm").addEventListener("submit", function(event) {
+            event.preventDefault();        
+            // Save the keys using your preferred method (e.g., localStorage, AJAX request, etc.)
+            // Your code to save the keys goes here
+            (savekey(keys));
+
+        });
+        
+        function savekey(keys){
+            alert(keys["openai"])
+        }
+
+    </script>
+</body>
+</html>

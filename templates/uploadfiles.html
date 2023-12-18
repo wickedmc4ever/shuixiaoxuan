@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<!--生成一个查看/upload文件夹内容的html，配合python fastapi， 使用jinja2模版-->
+<html>
+<head>
+    <title>Upload Files</title>
+</head>
+<body>
+    <h1>Uploaded Files</h1>
+    <label for="results">Results per page:</label>
+    <select id="results" name="results">
+        <option value="10">10</option>
+        <option value="20">20</option>
+        <option value="50">50</option>
+        <option value="100">100</option>
+    </select>
+    <ul>
+        {% for file in files %}
+            <li>{{ file }}</li>
+        {% endfor %}
+    </ul>
+    <div class="pagination">
+        <a href="#">Previous</a>
+        <a href="#">1</a>
+        <a href="#">2</a>
+        <a href="#">...</a>
+        <a href="#">Next</a>
+    </div>
+</body>
+</html>
